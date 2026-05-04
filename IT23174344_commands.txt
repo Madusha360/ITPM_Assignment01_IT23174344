@@ -1,0 +1,46 @@
+=== GIT REPOSTORY LINK ===
+--https://github.com/Madusha360/ITPM_Assignment01_IT23174344.git-
+
+
+RUN TEST AUTOMATION - FINAL WORKING COMMAND
+===========================================
+
+CORRECT COMMAND (Run from workspace root)
+------------------------------------------
+cd d:\IT23174344_Test_automation
+python test_automation.py `
+  --excel "IT23174344_Assignment 1 - Test cases.xlsx" `
+  --input-col "Input" `
+  --expected-col "Expected output" `
+  --actual-col "Actual output" `
+  --status-col "Status" `
+  --url "https://www.pixelssuite.com/chat-translator" `
+  --wait-ms 5000 `
+  --type-delay-ms 80 `
+  --slow-mo-ms 200 `
+  --save-every 10
+
+This command will:
+  ✓ Test all 200 rows from "IT23174344_Assignment 1 - Test cases.xlsx"
+  ✓ Send each test input to the chat translator URL
+  ✓ Capture and save actual output to Excel file
+  ✓ Mark Pass/Fail status for each row
+  ✓ Keep browser open after completion (press CTRL+C to close)
+
+PARAMETERS EXPLANATION
+======================
+--excel "IT23174344_Assignment 1 - Test cases.xlsx" : Excel file with test cases (workspace root)
+--url "https://www.pixelssuite.com/chat-translator"  : Target application URL  
+--wait-ms 5000                                 : Wait 5 seconds for output after each input
+--type-delay-ms 80                            : Delay 80ms between typing each character
+--slow-mo-ms 200                              : Slow down browser actions by 200ms (for visibility)
+--save-every 1                                : Save results after every test
+--keep-open                                   : Keep browser open after completion (remove to auto-close)
+
+ISSUES FIXED
+============
+✓ Sheet name: Changed " Test cases" → "Test Cases" (with leading space issue fixed)
+✓ Path resolution: Updated ROOT_DIR calculation to find Excel at workspace root
+✓ Deleted nested test Excel file copy that was causing 8-row instead of 200-row issue
+
+STATUS: Ready to use! Run the command above from workspace root.
